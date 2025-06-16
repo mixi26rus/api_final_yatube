@@ -3,7 +3,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny
 
 from posts.models import Post, Comment, Group, Follow
-from .serializers import (PostSerializer, CommentSerializer, 
+from .serializers import (PostSerializer, CommentSerializer,
                           GroupSerializer, FollowSerializer)
 from .permissions import IsAuthorOrReadOnly, IsAuthenticatedForFollow
 
@@ -11,7 +11,7 @@ from .permissions import IsAuthorOrReadOnly, IsAuthenticatedForFollow
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [AllowAny] # Могу и IsAuthorOrReadOnly юзать
+    permission_classes = [AllowAny]  # Могу и IsAuthorOrReadOnly юзать
     pagination_class = None
 
 
